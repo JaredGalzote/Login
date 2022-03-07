@@ -7,11 +7,8 @@ import {
 
 } from 'react-native';
 
-<<<<<<< HEAD
-import { FONTS, COLORS, SIZES, icons } from "../constants";
-=======
 import { FONTS, COLORS} from "../constants";
->>>>>>> 107fa3deae28fcc9add17a85ff047b8054504a6e
+
 
 const TextIconButton = ({
     containerStyle,

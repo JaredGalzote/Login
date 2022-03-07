@@ -17,11 +17,7 @@ import {
 } from "../../components";
 import { utils } from "../../utils";
 
-<<<<<<< HEAD
 const SignIn = ({ navigation } ) => {
-=======
-const SignIn = ({ navigation }) => {
->>>>>>> 107fa3deae28fcc9add17a85ff047b8054504a6e
 
     const [email, setEmail] = React.useState("")
     const [password, setPasword] = React.useState("")
