@@ -61,10 +61,11 @@ const FormInput = ({
                     autoCapitalize={autoCapitalize}
                     onChangeText={(text) => onChange(text)}
 
-               />
+               />   
+               {appendComponent}
 
             </View>
-
+                
 
         </View>
 
