@@ -20,7 +20,7 @@ import { utils } from "../../utils";
 const SignIn = ({ navigation } ) => {
 
     const [email, setEmail] = React.useState("")
-    const [password, setPasword] = React.useState("")
+    const [password, setPassword] = React.useState("")
     const [emailError, setEmailError] = React.useState("")
 
     const [showPass, setShowPass] = React.useState(false)
@@ -78,7 +78,7 @@ const SignIn = ({ navigation } ) => {
                     containerStyle={{
                         marginTop: SIZES.radius
                     }}
-                    onChange={(value) => setPasword(value)}
+                    onChange={(value) => setPassword(value)}
                     appendComponent={
                         <TouchableOpacity
                             style={{
