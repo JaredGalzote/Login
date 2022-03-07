@@ -9,10 +9,19 @@ import {
 import { AuthLayout } from "../";
 import { FONTS, COLORS, SIZES, icons } from "../../constants";
 
-import { FormInput, CustomSwitch, TextButton, TextIconButton} from "../../components";
+import {
+    FormInput,
+    CustomSwitch,
+    TextButton,
+    TextIconButton
+} from "../../components";
 import { utils } from "../../utils";
 
+<<<<<<< HEAD
 const SignIn = ({ navigation } ) => {
+=======
+const SignIn = ({ navigation }) => {
+>>>>>>> 107fa3deae28fcc9add17a85ff047b8054504a6e
 
     const [email, setEmail] = React.useState("")
     const [password, setPasword] = React.useState("")
@@ -56,7 +65,7 @@ const SignIn = ({ navigation } ) => {
                             }}
                         >
                             <Image
-                                source={email == "" || (email != "" && emailError == "") ? icons.correct : icons.cancel }
+                                source={email == "" || (email != "" && emailError == "") ? icons.correct : icons.cancel}
                                 style={{
                                     height: 20,
                                     width: 20,
@@ -88,10 +97,10 @@ const SignIn = ({ navigation } ) => {
                                 style={{
                                     height: 20,
                                     width: 20,
-                                    tintColor: email == "" ? 
-                                    COLORS.gray : ( email != "" && 
-                                    emailError == "") ? COLORS.
-                                    green : COLORS.red
+                                    tintColor: email == "" ?
+                                        COLORS.gray : (email != "" &&
+                                            emailError == "") ? COLORS.
+                                            green : COLORS.red
                                 }}
                             />
                         </TouchableOpacity>
@@ -127,13 +136,14 @@ const SignIn = ({ navigation } ) => {
                 {/* sign in */}
                 <TextButton
                     label="Sign In"
-                    disabled={isEnableSignIn() ? false : true }
+                    disabled={isEnableSignIn() ? false : true}
                     buttonContainerStyle={{
                         height: 55,
                         alignItems: 'center',
                         marginTop: SIZES.padding,
                         borderRadius: SIZES.radius,
-                        backgroundColor: COLORS.primary
+                        backgroundColor: isEnableSignIn()?COLORS.primary : 
+                        COLORS.transparentPrimary
                     }}
                 />
 
@@ -177,7 +187,7 @@ const SignIn = ({ navigation } ) => {
                 {/* Facebook */}
                 <TextIconButton
                     containerStyle={{
-                        height: 50, 
+                        height: 50,
                         alignItems: 'center',
                         borderRadius: SIZES.radius,
                         backgroundColor: COLORS.blue
@@ -200,7 +210,7 @@ const SignIn = ({ navigation } ) => {
             </View>
 
 
-         </AuthLayout> 
+        </AuthLayout>
     )
 }
 
