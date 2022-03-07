@@ -9,16 +9,22 @@ import {
 import { AuthLayout } from "../";
 import { FONTS, COLORS, SIZES, icons } from "../../constants";
 
-import { FormInput } from "../../components";
+import { FormInput, CustomSwitch, TextButton, TextIconButton} from "../../components";
 import { utils } from "../../utils";
 
-const SignIn = () => {
+const SignIn = ( { navigation } ) => {
 
     const [email, setEmail] = React.useState("")
     const [password, setPasword] = React.useState("")
     const [emailError, setEmailError] = React.useState("")
 
     const [showPass, setShowPass] = React.useState(false)
+    const [saveMe, setSaveMe] = React.useState(false)
+
+    function isEnableSignIn() {
+        return email != "" && password != "" && emailError == ""
+
+    }
 
 
     return (
@@ -75,13 +81,17 @@ const SignIn = () => {
                                 alignItems: 'flex-end',
                                 justifyContent: 'center'
                             }}
+                            onPress={() => setShowPass(!showPass)}
                         >
                             <Image
                                 source={showPass ? icons.eye_close : icons.eye}
                                 style={{
                                     height: 20,
                                     width: 20,
-                                    tintColor: COLORS.gray
+                                    tintColor: email == "" ? 
+                                    COLORS.gray : ( email != "" && 
+                                    emailError == "") ? COLORS.
+                                    green : COLORS.red
                                 }}
                             />
                         </TouchableOpacity>
@@ -89,14 +99,108 @@ const SignIn = () => {
                 />
 
                 {/* forgot password */}
+                <View
+                    style={{
+                        flexDirection: 'row',
+                        marginTop: SIZES.radius,
+                        justifyContent: 'space-between'
+                    }}
+                >
+                    <CustomSwitch
+                        value={saveMe}
+                        onChange={(value) => setSaveMe(value)}
+                    />
+                    <TextButton
+                        label="Forgot Password"
+                        buttonContainerStyle={{
+                            backgroundColor: null
+                        }}
+                        labelStyle={{
+                            color: COLORS.gray,
+                            ...FONTS.body4
+                        }}
+                        onPress={() => navigation.navigate("ForgotPassword")}
+                    />
+
+                </View>
 
                 {/* sign in */}
+                <TextButton
+                    label="Sign In"
+                    disabled={isEnableSignIn() ? false : true }
+                    buttonContainerStyle={{
+                        height: 55,
+                        alignItems: 'center',
+                        marginTop: SIZES.padding,
+                        borderRadius: SIZES.radius,
+                        backgroundColor: COLORS.primary
+                    }}
+                />
 
                 {/* sign up */}
+                <View
+                    style={{
+                        flexDirection: 'row',
+                        marginTop: SIZES.radius,
+                        justifyContent: 'center'
+                    }}
+                >
+                    <Text
+                        style={{
+                            color: COLORS.darkGray,
+                            ...FONTS.body3
+                        }}
+                    >
+                        Don't have an account?
+                    </Text>
+
+                    <TextButton
+                        label="Sign Up"
+                        buttonContainerStyle={{
+                            marginLeft: 3,
+                            backgroundColor: null
+                        }}
+                        labelStyle={{
+                            color: COLORS.primary,
+                            ...FONTS.h3
+                        }}
+                        onPress={() => navigation.navigate("SignUp")}
+                    />
+
+                </View>
 
             </View>
 
-        </AuthLayout> 
+            {/* footer*/}
+            <View>
+
+                {/* Facebook */}
+                <TextIconButton
+                    containerStyle={{
+                        height: 50, 
+                        alignItems: 'center',
+                        borderRadius: SIZES.radius,
+                        backgroundColor: COLORS.blue
+                    }}
+                    icon={icons.fb}
+                    iconPosition="LEFT"
+                    iconStyle={{
+                        tintcolor: COLORS.white
+
+                    }}
+                    label="Continue With Facebook"
+                    labelStyle={{
+                        marginLeft: SIZES.radius,
+                        color: COLORS.white
+                    }}
+                    onPress={() => console.log("FB")}
+                />
+
+                {/* Google */}
+            </View>
+
+
+         </AuthLayout> 
     )
 }
 
