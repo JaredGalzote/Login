@@ -191,7 +191,7 @@ const SignIn = ({ navigation } ) => {
                     icon={icons.fb}
                     iconPosition="LEFT"
                     iconStyle={{
-                        tintcolor: COLORS.white
+                        tintColor: COLORS.white
 
                     }}
                     label="Continue With Facebook"
@@ -203,6 +203,26 @@ const SignIn = ({ navigation } ) => {
                 />
 
                 {/* Google */}
+                <TextIconButton
+                    containerStyle={{
+                        height: 50,
+                        alignItems: 'center',
+                        marginTop: SIZES.radius,
+                        borderRadius: SIZES.radius,
+                        backgroundColor: COLORS.lightGray2
+                    }}
+                    icon={icons.google}
+                    iconPosition="LEFT"
+                    iconStyle={{
+                        tintColor: COLORS.black
+                    }}
+                    label="Continue With Google"
+                    labelStyle={{ 
+                        marginLeft: SIZES.radius
+            
+                    }}
+                    onPress={() => console.log("Google")}
+                />
             </View>
 
 
