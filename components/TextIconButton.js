@@ -7,7 +7,7 @@ import {
 
 } from 'react-native';
 
-import { FONTS, COLORS, SIZES, icons } from "../../constants";
+import { FONTS, COLORS} from "../constants";
 
 const TextIconButton = ({
     containerStyle,
@@ -39,11 +39,13 @@ const TextIconButton = ({
                     }}
                 />
             }
-            <Text>
-                style={{
+            <Text 
+            style={{
                     ...FONTS.body3,
                     ...labelStyle
                 }}
+            >
+             {label}   
             </Text>
 
             {iconPosition == "RIGHT" &&
@@ -70,4 +72,4 @@ const styles = StyleSheet.create({
         tintColor: COLORS.black
     }
 })
-export default TextIconButton
+export default TextIconButton;
