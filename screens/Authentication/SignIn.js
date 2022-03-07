@@ -12,7 +12,7 @@ import { FONTS, COLORS, SIZES, icons } from "../../constants";
 import { FormInput, CustomSwitch, TextButton, TextIconButton} from "../../components";
 import { utils } from "../../utils";
 
-const SignIn = ( { navigation } ) => {
+const SignIn = ({ navigation } ) => {
 
     const [email, setEmail] = React.useState("")
     const [password, setPasword] = React.useState("")
