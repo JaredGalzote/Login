@@ -65,22 +65,24 @@ const ForgotPassword = ({ navigation }) => {
                         </View>
                     }
                 />
+                 {/* Button */}
+                 
+                <TextButton
+                    label="Send Email"
+                    disabled={isEnableSendEmail() ? false : true}
+                    buttonContainerStyle={{
+                        height: 55,
+                        alignItems: 'center',
+                        marginTop: SIZES.padding,
+                        backgroundColor: isEnableSendEmail() ? COLORS.primary : COLORS.transparentPrimary
+
+                    }}
+                    onPress={() => navigation.goBack()}
+                />
 
             </View>
 
-            {/* Button */}
-            <TextButton
-                label="Send Email"
-                disabled={isEnableSendEmail() ? false : true}
-                buttonContainerStyle={{
-                    height: 55,
-                    alignItems: 'center',
-                    marginTop: SIZES.padding,
-                    backgroundColor: isEnableSendEmail() ? COLORS.primary : COLORS.transparentPrimary
-
-                }}
-                onPress={() => navigation.goBack()}
-            />
+           
         </AuthLayout>
     )
 }
