@@ -17,7 +17,7 @@ import {
 } from "../../components";
 import { utils } from "../../utils";
 
-const SignIn = ({ navigation } ) => {
+const SignIn = ({ navigation }) => {
 
     const [email, setEmail] = React.useState("")
     const [password, setPassword] = React.useState("")
@@ -138,8 +138,8 @@ const SignIn = ({ navigation } ) => {
                         alignItems: 'center',
                         marginTop: SIZES.padding,
                         borderRadius: SIZES.radius,
-                        backgroundColor: isEnableSignIn()?COLORS.primary : 
-                        COLORS.transparentPrimary
+                        backgroundColor: isEnableSignIn() ? COLORS.primary :
+                            COLORS.transparentPrimary
                     }}
                 />
 
@@ -174,58 +174,54 @@ const SignIn = ({ navigation } ) => {
                     />
 
                 </View>
+                {/* footer*/}
+                <View>
 
+                    {/* Facebook */}
+                    <TextIconButton
+                        containerStyle={{
+                            height: 50,
+                            alignItems: 'center',
+                            borderRadius: SIZES.radius,
+                            backgroundColor: COLORS.blue
+                        }}
+                        icon={icons.fb}
+                        iconPosition="LEFT"
+                        iconStyle={{
+                            tintColor: COLORS.white
+
+                        }}
+                        label="Continue With Facebook"
+                        labelStyle={{
+                            marginLeft: SIZES.radius,
+                            color: COLORS.white
+                        }}
+                        onPress={() => console.log("FB")}
+                    />
+
+                    {/* Google */}
+                    <TextIconButton
+                        containerStyle={{
+                            height: 50,
+                            alignItems: 'center',
+                            marginTop: SIZES.radius,
+                            borderRadius: SIZES.radius,
+                            backgroundColor: COLORS.lightGray2
+                        }}
+                        icon={icons.google}
+                        iconPosition="LEFT"
+                        iconStyle={{
+                            tintColor: COLORS.black
+                        }}
+                        label="Continue With Google"
+                        labelStyle={{
+                            marginLeft: SIZES.radius
+
+                        }}
+                        onPress={() => console.log("Google")}
+                    />
+                </View>
             </View>
-
-            {/* footer*/}
-            <View>
-
-                {/* Facebook */}
-                <TextIconButton
-                    containerStyle={{
-                        height: 50,
-                        alignItems: 'center',
-                        borderRadius: SIZES.radius,
-                        backgroundColor: COLORS.blue
-                    }}
-                    icon={icons.fb}
-                    iconPosition="LEFT"
-                    iconStyle={{
-                        tintColor: COLORS.white
-
-                    }}
-                    label="Continue With Facebook"
-                    labelStyle={{
-                        marginLeft: SIZES.radius,
-                        color: COLORS.white
-                    }}
-                    onPress={() => console.log("FB")}
-                />
-
-                {/* Google */}
-                <TextIconButton
-                    containerStyle={{
-                        height: 50,
-                        alignItems: 'center',
-                        marginTop: SIZES.radius,
-                        borderRadius: SIZES.radius,
-                        backgroundColor: COLORS.lightGray2
-                    }}
-                    icon={icons.google}
-                    iconPosition="LEFT"
-                    iconStyle={{
-                        tintColor: COLORS.black
-                    }}
-                    label="Continue With Google"
-                    labelStyle={{ 
-                        marginLeft: SIZES.radius
-            
-                    }}
-                    onPress={() => console.log("Google")}
-                />
-            </View>
-
-
         </AuthLayout>
     )
 }
